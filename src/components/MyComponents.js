@@ -8,21 +8,28 @@ class MyComponent  extends React.Component {
         tuoi:43,
         diachi:"Châu Phong"
     }
-    handleClick(event){
+    handleClick=(event)=>{
         // console.log("Xin chào")
-        console.log("Bạn đã click vào tôi");
+        // console.log("Bạn đã click vào tôi");
         console.log("Tên tôi là ", this.state.name)
+        this.setState(
+            {
+                name:"Hưng",
+                tuoi:Math.floor(Math.random() *100 +1)
+            }
+        )
     }
-    handleOnmouseOver(event){
+    handleOnmouseOver=(event)=>{
         console.log("Bạn vừa rê chuột vào")
     }
+    
 
     render(){
         return (
            <div>
-            Tôi tên {this.state.name} và đang ở {this.state.diachi}
-            <button onClick={this.handleClick}>Click Me</button>
-            <button onMouseOver={this.handleOnmouseOver}>rê chuột vào tôi</button>
+            Tôi tên {this.state.name} và đang ở {this.state.tuoi}
+            <button onClick={(event)=>{this.handleClick(event)} }>Click Me</button>
+            <button onMouseOver={(event)=>{this.handleOnmouseOver(event)} }>rê chuột vào tôi</button>
            </div>
         );
     }
