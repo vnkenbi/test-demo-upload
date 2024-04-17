@@ -1,22 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
-import MyComponent from './components/MyComponents'
-import React from 'react';
 
-
+import React from "react";
+import Mycomponent from "./components/MyComponents";
 
 class App extends React.Component{
-  render(){
-    return (
-      <div> Hỏi dan it
-        <MyComponent></MyComponent>
-       
-      </div>
-    );
-  }
+    render(){
+      return(
+        <div>
+            <Mycomponent/>
+        </div>
+      );
+    }
 }
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import logo from './logo.svg';
+// import './App.css';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { increaseCounter, decreaseCounter } from './redux/action/counterAction';
+// import MyComponent from './components/MyComponents'
+// import React from 'react';
+
+
+
+// class App extends React.Component{
+//   render(){
+//     return (
+//       <div> 
+//         Hỏi dan it
+//         <MyComponent></MyComponent>
+       
+//       </div>
+//     );
+//   }
+// }
 
 
 
@@ -42,4 +84,4 @@ class App extends React.Component{
 //   );
 // }
 
-export default App;
+// export default App;
