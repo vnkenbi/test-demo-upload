@@ -1,5 +1,6 @@
 
 import React from "react";
+import './App.scss';
 import Mycomponent from "./components/MyComponents";
 
 class App extends React.Component{

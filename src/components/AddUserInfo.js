@@ -1,6 +1,6 @@
 import React from "react";
 
-class UserInfo extends React.Component{
+class AddUserInfo extends React.Component{
     //tạo biến ob state
     state={
         name:"Hòa Lợi",
@@ -25,6 +25,13 @@ class UserInfo extends React.Component{
         // alert("me")
         event.preventDefault();
         console.log(this.state)
+        this.props.handleAddsubmit({
+            id: Math.floor(Math.random()*100+1) + "-random",
+            name:this.state.name,
+            tuoi:this.state.tuoi
+            
+        
+        });
 
     }
 
@@ -35,6 +42,7 @@ class UserInfo extends React.Component{
             }
         )
     }
+    
     render(){
         return (
             <div>
@@ -51,7 +59,7 @@ class UserInfo extends React.Component{
                     onChange={(event)=>this.handleOnchangAge(event)}
                     />
 
-                    <button>Submit</button>
+                    <button >Submit</button>
                   </form>
             </div>
         );
@@ -59,7 +67,7 @@ class UserInfo extends React.Component{
 
 
 }
-export default UserInfo;
+export default AddUserInfo;
 
 
 
