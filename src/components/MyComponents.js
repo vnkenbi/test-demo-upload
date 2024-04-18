@@ -26,14 +26,44 @@ class Mycomponent extends React.Component{
             }
         )
     }
-    render(){
+    handleDele=(userId)=>{
+        let listuserClone=this.state.listUsers ;
+         listuserClone=listuserClone.filter(
+            (duLieuTungDong)=>{
+                return duLieuTungDong.id !==userId
+            }
+        )
+        this.setState(
+            {
+                listUsers:listuserClone
+            }
+        )
+    }
+    //JSX
+        render(){
+        // const test="Hà Nội";
+        // const tist=56;
+        // const tys=[1,2,3]
+        // const tus={name:"Hà", diachi:"Vĩnh Lộc"}
         return(
             <>
+                {/* {test}<br/>
+                {tist}<br/>
+                {tys}<br/>
+                { JSON.stringify(tus)} */}
+
                 <div className="a">
                 <AddUserInfo handleAddsubmit= {this.handleAddsubmit} />
+
+                {/* <Display handleDele={this.handleDele}/> */}
                 
                 <hr/>
-                <Display listUsers={this.state.listUsers} />
+                <Display 
+                listUsers={this.state.listUsers} 
+                handleDele={this.handleDele}
+                
+                />
+               
                 </div>
                 <div className="b">
 

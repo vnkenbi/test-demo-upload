@@ -25,13 +25,13 @@ class Display extends React.Component{
         
         return(
             <div className="Display-container">
-                    <img src={logo} />
+                    {/* <img src={logo} /> */}
                     <div>
                         <span onClick={(event)=>{this.handleShowhide(event)}}>{this.state.isShowhide===false ? "Show list user" : "Hide list user" }</span>
                     </div>
 
                     { this.state.isShowhide &&
-                    <div>
+                    <>
                         {
                             listUsers.map(
                                 
@@ -40,6 +40,11 @@ class Display extends React.Component{
                                         <div key={user.id} className={+user.tuoi > 18 ? "green" : "red"}>
                                                     <div >Tôi tên {user.name}</div>
                                                     <div>Tuổi: {user.tuoi}</div>
+                                                   
+                                                    <div>
+                                                        <button onClick={()=>{this.props.handleDele(user.id)}}>Delete</button>
+                                                        
+                                                    </div>
                                                     <hr/>
                                         </div>
                                     );
@@ -48,7 +53,7 @@ class Display extends React.Component{
                         }
                         
                         
-                    </div>
+                    </>
                     }
             </div>
         );
